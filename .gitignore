@@ -1,24 +1,104 @@
-# Compiled class file
-*.class
+class Curso {
+    private String nombre;
+    private String codigo;
+    private int creditos;
 
-# Log file
-*.log
+    public Curso(String nombre, String codigo, int creditos) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.creditos = creditos;
+    }
 
-# BlueJ files
-*.ctxt
+    public String getNombre() {
+        return nombre;
+    }
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+    public String getCodigo() {
+        return codigo;
+    }
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public int getCreditos() {
+        return creditos;
+    }
+
+    public void setCreditos(int creditos) {
+        this.creditos = creditos;
+    }
+}
+
+class Estudiante {
+    private String nombre;
+    private int edad;
+    private String carrera;
+
+    public Estudiante(String nombre, int edad, String carrera) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.carrera = carrera;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+}
+
+public class MatriculaApp {
+    public static void main(String[] args) {
+        Curso curso1 = new Curso("Programación I", "CS101", 4);
+        Curso curso2 = new Curso("Matemáticas Discretas", "MATH210", 3);
+        Curso curso3 = new Curso("Inglés I", "ENG101", 2);
+
+        Estudiante estudiante1 = new Estudiante("Juan Perez", 20, "Ingeniería de Software");
+        Estudiante estudiante2 = new Estudiante("Maria Rodriguez", 22, "Medicina");
+
+        // Vector de objetos
+        Curso[] cursos = {curso1, curso2, curso3};
+        Estudiante[] estudiantes = {estudiante1, estudiante2};
+
+        // Mostrar información de cursos
+        System.out.println("Información de cursos:");
+        for (Curso curso : cursos) {
+            System.out.println("Curso: " + curso.getNombre());
+            System.out.println("Código: " + curso.getCodigo());
+            System.out.println("Créditos: " + curso.getCreditos());
+            System.out.println();
+        }
+
+        // Mostrar información de estudiantes
+        System.out.println("Información de estudiantes:");
+        for (Estudiante estudiante : estudiantes) {
+            System.out.println("Estudiante: " + estudiante.getNombre());
+            System.out.println("Edad: " + estudiante.getEdad());
+            System.out.println("Carrera: " + estudiante.getCarrera());
+            System.out.println();
+        }
+    }
+}
